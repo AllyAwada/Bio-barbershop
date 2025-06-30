@@ -100,6 +100,54 @@ footer {
   text-align: center;
 }
 
+.produtos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card-produto {
+  background-color: var(--bege-claro);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: left;
+}
+
+.card-produto img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 1rem;
+}
+
+.card-info h3 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--verde-escuro);
+}
+
+.btn-info {
+  display: inline-block;
+  background-color: var(--verde-escuro);
+  color: var(--bege-claro);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-info:hover {
+  background-color: var(--dourado);
+  color: var(--verde-escuro);
+  transform: scale(1.05);
+}
 
 /* Animação de piscar suave */
 @keyframes piscar {
