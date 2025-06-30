@@ -60,8 +60,10 @@ h1 {
 }
 
 .links a {
-  display: block;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* espaço entre ícone e texto */
   background-color: var(--verde-claro);
   color: var(--bege-claro);
   text-decoration: none;
@@ -77,6 +79,13 @@ h1 {
   color: var(--verde-escuro);
   transform: translateY(-2px);
 }
+
+.links a .icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 
 .info {
   font-size: clamp(0.85rem, 2.5vw, 1rem);
