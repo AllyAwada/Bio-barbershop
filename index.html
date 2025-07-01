@@ -13,9 +13,36 @@
 
 <body>
   <main class="container">
-    <img src="./Assets/Logo reduzida contorno verde.jpg" alt="Logo Barbearia" class="logo" />
+    <!-- <img src="./Assets/Logo reduzida contorno verde.jpg" alt="Logo Barbearia" class="logo" />
     <h1>Buxecha BarberShop</h1>
-    <p class="subtitle">Atendimento agendado e por ordem de chegada | São Paulo - SP</p>
+    <p class="subtitle">Atendimento agendado e por ordem de chegada | São Paulo - SP</p> -->
+
+    <section class="profile-card">
+      <button onclick="toggleShareModal()" class="share-button" title="Compartilhar perfil">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <circle cx="18" cy="5" r="3"></circle>
+          <circle cx="6" cy="12" r="3"></circle>
+          <circle cx="18" cy="19" r="3"></circle>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+        </svg>
+      </button>
+
+      <img class="profile-img" src="./Assets/Logo reduzida contorno verde.jpg" alt="Logo Buxecha">
+
+      <h2 class="profile-name">Buxecha BarberShop</h2>
+
+      <p class="profile-desc">
+        Buxecha Barber Shop
+        Estilo, conforto e um atendimento que faz você se sentir em casa.
+      </p>
+
+      <a href="./buxecha.vcf" download class="save-contact-btn">
+        Salvar na agenda
+      </a>
+    </section>
+
 
     <div class="links">
       <a href="https://barb.page.link/VJytn" target="_blank" class="highlight-button"><img class="icon"
@@ -55,6 +82,63 @@
       &copy; 2025 Buxecha BarberShop
     </footer>
   </main>
+
+  <!-- Modal QR Code -->
+  <div id="qr-modal" class="qr-modal hidden">
+    <div class="qr-box">
+      <button class="close-qr" onclick="toggleQRModal()">✕</button>
+      <h3>Escaneie para acessar o perfil</h3>
+      <img src="./Assets/QrCode.svg" alt="QR Code do perfil" class="qr-image">
+    </div>
+  </div>
+
+
+  <!-- Overlay de Compartilhamento -->
+  <div id="share-modal" class="share-modal hidden">
+    <div class="share-box">
+      <button class="close-share" onclick="toggleShareModal()">✕</button>
+      <h3>Compartilhe este perfil</h3>
+
+      <ul class="share-options">
+        <li><a href="#" onclick="openQRCode()">📷 Abrir QR Code</a></li>
+        <li><a href="https://wa.me/?text=https://buxechabarbershop.vercel.app" target="_blank">💬 Enviar via
+            WhatsApp</a></li>
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://buxechabarbershop.vercel.app"
+            target="_blank">📘Facebook</a></li>
+        <li><a href="https://t.me/share/url?url=https://buxechabarbershop.vercel.app" target="_blank">✈️ Telegram</a>
+        </li>
+        <li><a href="mailto:?subject=Veja meu perfil&body=https://buxechabarbershop.vercel.app">✉️ E-mail</a></li>
+      </ul>
+
+      <div class="copy-box">
+        <input type="text" id="profile-link" readonly value="https://buxechabarbershop.vercel.app">
+        <button onclick="copyLink()">Copiar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleShareModal() {
+      document.getElementById('share-modal').classList.toggle('hidden');
+    }
+
+    function copyLink() {
+      const input = document.getElementById("profile-link");
+      input.select();
+      input.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Link copiado!");
+    }
+
+    function openQRCode() {
+      document.getElementById("qr-modal").classList.remove("hidden");
+    }
+
+    function toggleQRModal(){
+      document.getElementById("qr-modal").classList.add("hidden");
+    }
+  </script>
+
 </body>
 
 </html>

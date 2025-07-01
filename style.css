@@ -176,3 +176,212 @@ footer {
   animation: piscar 1s infinite;
   font-weight: 700;
 }
+
+.profile-card {
+  position: relative;
+  background-color: rgba(24, 61, 44, 0.95);
+  color: #E5E4E2;
+  padding: 2rem 1rem 1.5rem;
+  border-radius: 20px;
+  max-width: 400px;
+  margin: 2rem auto;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+
+.share-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  color: #E5E4E2;
+}
+
+.share-button:hover {
+  transform: scale(1.1);
+}
+
+.share-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #E6B372;
+  background-color: white;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.profile-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #E6B372;
+  margin-bottom: 0.5rem;
+}
+
+.profile-desc {
+  font-size: 0.95rem;
+  font-style: italic;
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.save-contact-btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 25px;
+  background-color: transparent;
+  border: 2px solid #E5E4E2;
+  color: #E5E4E2;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.save-contact-btn:hover {
+  background-color: #E6B372;
+  color: #183D2C;
+}
+
+/* Modal */
+.share-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.share-modal.hidden {
+  display: none;
+}
+
+.share-box {
+  background: #fff;
+  color: #222;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+}
+
+.share-box h3 {
+  margin-bottom: 1rem;
+}
+
+.close-share {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.share-options {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.share-options li {
+  margin: 0.6rem 0;
+}
+
+.share-options a {
+  text-decoration: none;
+  color: #183D2C;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.copy-box {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.copy-box input {
+  flex: 1;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.copy-box button {
+  padding: 0.4rem 1rem;
+  background: #183D2C;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+/* Modal de QR Code */
+.qr-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.qr-modal.hidden {
+  display: none;
+}
+
+.qr-box {
+  background: #fff;
+  color: #183D2C;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+  max-width: 320px;
+  width: 90%;
+}
+
+.qr-box h3 {
+  margin-bottom: 1rem;
+}
+
+.qr-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.close-qr {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
