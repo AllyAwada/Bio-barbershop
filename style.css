@@ -65,7 +65,8 @@ h2 {
   margin-bottom: 2rem;
 }
 
-.links a {
+.links a,
+.links button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,16 +78,20 @@ h2 {
   border-radius: 8px;
   font-weight: bold;
   font-size: 1rem;
+  border: none;
   transition: background 0.3s, transform 0.2s;
 }
 
-.links a:hover {
+.links a:hover,
+.links button:hover {
   background-color: var(--dourado);
   color: var(--verde-escuro);
   transform: translateY(-2px);
+  cursor: pointer;
 }
 
-.links a .icon {
+.links a .icon,
+.links button .icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
@@ -384,4 +389,31 @@ footer {
   border: none;
   font-size: 1.3rem;
   cursor: pointer;
+}
+
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #E6B372;
+  color: #183D2C;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  font-weight: bold;
+  font-size: 0.95rem;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden {
+  display: none;
 }

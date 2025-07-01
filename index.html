@@ -51,6 +51,8 @@
           src="./Assets/icons/avaliacao.svg" alt="">Avaliações no Google</a>
       <a href="https://maps.app.goo.gl/o4E7bCzcjoDbDtRW7" target="_blank"><img class="icon"
           src="./Assets/icons/location.svg" alt="">Localização</a>
+      <button onclick="copyPix()" target="_blank"><img class="icon" src="./Assets/icons/pix.svg"
+          alt="">Pix</button>
       <a href="https://api.whatsapp.com/send?phone=5511964495666" target="_blank"><img class="icon"
           src="./Assets/icons/whatsapp.svg" alt="">WhatsApp</a>
       <a href="https://www.instagram.com/buxecha.barbershop/" target="_blank"><img class="icon"
@@ -117,10 +119,36 @@
     </div>
   </div>
 
+  <!-- Toast de confirmação -->
+  <div id="pix-toast" class="toast hidden">🔗 Chave Pix copiada!</div>
+
+
   <script>
     function toggleShareModal() {
       document.getElementById('share-modal').classList.toggle('hidden');
     }
+
+    function copyPix() {
+      const pixCode = `00020101021126360014BR.GOV.BCB.PIX0114+55119596539915204000053039865802BR5925JEFFERSON RODRIGUES DE OL6008SAOPAULO61080132305062070503***63043BF0`;
+
+      const tempInput = document.createElement("textarea");
+      tempInput.value = pixCode;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+
+      // Mostra o toast
+      const toast = document.getElementById("pix-toast");
+      toast.classList.remove("hidden");
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.classList.add("hidden"), 300);
+      }, 2500);
+    }
+
 
     function copyLink() {
       const input = document.getElementById("profile-link");
@@ -134,7 +162,7 @@
       document.getElementById("qr-modal").classList.remove("hidden");
     }
 
-    function toggleQRModal(){
+    function toggleQRModal() {
       document.getElementById("qr-modal").classList.add("hidden");
     }
   </script>
