@@ -42,6 +42,37 @@
         Salvar na agenda
       </a>
     </section>
+    <section class="carousel-portrait">
+      <div class="carousel-portrait-container" id="carouselContainer">
+        <img src="./Assets/cortes/foto1.jpg" alt="Foto 1 da barbearia">
+        <img src="./Assets/cortes/foto2.jpg" alt="Foto 2 da barbearia">
+        <img src="./Assets/cortes/foto3.jpg" alt="Foto 3 da barbearia">
+        <img src="./Assets/cortes/foto4.jpg" alt="Foto 4 da barbearia">
+        <img src="./Assets/cortes/foto5.jpg" alt="Foto 5 da barbearia">
+        <img src="./Assets/cortes/foto6.jpg" alt="Foto 6 da barbearia">
+        <img src="./Assets/cortes/foto7.jpg" alt="Foto 7 da barbearia">
+        <img src="./Assets/cortes/foto8.jpg" alt="Foto 8 da barbearia">
+        <img src="./Assets/cortes/foto9.jpg" alt="Foto 9 da barbearia">
+        <img src="./Assets/cortes/foto10.jpg" alt="Foto 10 da barbearia">
+        <img src="./Assets/cortes/foto11.jpg" alt="Foto 11 da barbearia">
+        <img src="./Assets/cortes/foto12.jpg" alt="Foto 12 da barbearia">
+        <img src="./Assets/cortes/foto13.jpg" alt="Foto 13 da barbearia">
+        <img src="./Assets/cortes/foto14.jpg" alt="Foto 14 da barbearia">
+        <img src="./Assets/cortes/foto15.jpg" alt="Foto 15 da barbearia">
+        <img src="./Assets/cortes/foto16.jpg" alt="Foto 16 da barbearia">
+        <img src="./Assets/cortes/foto17.jpg" alt="Foto 17 da barbearia">
+        <img src="./Assets/cortes/foto18.jpg" alt="Foto 18 da barbearia">
+        <img src="./Assets/cortes/foto19.jpg" alt="Foto 19 da barbearia">
+        <img src="./Assets/cortes/foto20.jpg" alt="Foto 20 da barbearia">
+        <img src="./Assets/cortes/foto21.jpg" alt="Foto 21 da barbearia">
+        <img src="./Assets/cortes/foto22.jpg" alt="Foto 22 da barbearia">
+        <img src="./Assets/cortes/foto23.jpg" alt="Foto 23 da barbearia">
+      </div>
+      <div class="carousel-portrait-buttons">
+        <button onclick="portraitSlide(-1)">❮</button>
+        <button onclick="portraitSlide(1)">❯</button>
+      </div>
+    </section>
 
 
     <div class="links">
@@ -51,8 +82,7 @@
           src="./Assets/icons/avaliacao.svg" alt="">Avaliações no Google</a>
       <a href="https://maps.app.goo.gl/o4E7bCzcjoDbDtRW7" target="_blank"><img class="icon"
           src="./Assets/icons/location.svg" alt="">Localização</a>
-      <button onclick="copyPix()" target="_blank"><img class="icon" src="./Assets/icons/pix.svg"
-          alt="">Pix</button>
+      <button onclick="copyPix()" target="_blank"><img class="icon" src="./Assets/icons/pix.svg" alt="">Pix</button>
       <a href="https://api.whatsapp.com/send?phone=5511964495666" target="_blank"><img class="icon"
           src="./Assets/icons/whatsapp.svg" alt="">WhatsApp</a>
       <a href="https://www.instagram.com/buxecha.barbershop/" target="_blank"><img class="icon"
@@ -103,13 +133,18 @@
 
       <ul class="share-options">
         <li><a href="#" onclick="openQRCode()">📷 Abrir QR Code</a></li>
-        <li><a href="https://wa.me/?text=conheça a barbearia buxecha barber shop, a melhor barbearia aqui de são paulo: https://buxechabarbershop.vercel.app" target="_blank"><img src="./Assets/icons/whatsapp black.svg" alt="" class="icon"> Enviar via
+        <li><a
+            href="https://wa.me/?text=conheça a barbearia buxecha barber shop, a melhor barbearia aqui de são paulo: https://buxechabarbershop.vercel.app"
+            target="_blank"><img src="./Assets/icons/whatsapp black.svg" alt="" class="icon"> Enviar via
             WhatsApp</a></li>
-        <li><a href="https://www.facebook.com/sharer/sharer.php?u=Conheça a barbearia buxecha barber shop, a melhor barbearia aqui de são paulo: https://buxechabarbershop.vercel.app"
+        <li><a
+            href="https://www.facebook.com/sharer/sharer.php?u=Conheça a barbearia buxecha barber shop, a melhor barbearia aqui de são paulo: https://buxechabarbershop.vercel.app"
             target="_blank">📘Facebook</a></li>
         <li><a href="https://t.me/share/url?url=https://buxechabarbershop.vercel.app" target="_blank">✈️ Telegram</a>
         </li>
-        <li><a href="mailto:?subject=Conheça a barbearia buxecha barber shop, a melhor barbearia aqui de são paulo:&body=https://buxechabarbershop.vercel.app">✉️ E-mail</a></li>
+        <li><a
+            href="mailto:?subject=Conheça a barbearia buxecha barber shop, a melhor barbearia aqui de são paulo:&body=https://buxechabarbershop.vercel.app">✉️
+            E-mail</a></li>
       </ul>
 
       <div class="copy-box">
@@ -165,6 +200,28 @@
     function toggleQRModal() {
       document.getElementById("qr-modal").classList.add("hidden");
     }
+    let currentPortraitSlide = 0;
+
+    function portraitSlide(direction) {
+      const container = document.getElementById("carouselContainer");
+      const slides = container.children.length;
+      const slideWidth = container.offsetWidth;
+
+      currentPortraitSlide = (currentPortraitSlide + direction + slides) % slides;
+      container.style.transform = `translateX(-${currentPortraitSlide * slideWidth}px)`;
+    }
+
+    // Atualiza largura em redimensionamento
+    window.addEventListener("resize", () => {
+      const container = document.getElementById("carouselContainer");
+      const slideWidth = container.offsetWidth;
+      container.style.transform = `translateX(-${currentPortraitSlide * slideWidth}px)`;
+    });
+    
+    // Avanço automático
+    setInterval(() => portraitSlide(1), 5000);
+
+
   </script>
 
 </body>

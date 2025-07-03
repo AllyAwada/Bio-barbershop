@@ -70,7 +70,8 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem; /* espaço entre ícone e texto */
+  gap: 0.5rem;
+  /* espaço entre ícone e texto */
   background-color: var(--verde-claro);
   color: var(--bege-claro);
   text-decoration: none;
@@ -90,7 +91,7 @@ h2 {
   cursor: pointer;
 }
 
-.icon{
+.icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
@@ -122,7 +123,7 @@ footer {
   background-color: var(--bege-claro);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: left;
 }
 
@@ -190,7 +191,7 @@ footer {
   max-width: 400px;
   margin: 2rem auto;
   text-align: center;
-  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
 .share-button {
@@ -265,7 +266,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -347,7 +348,7 @@ footer {
 .qr-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -399,7 +400,7 @@ footer {
   color: #183D2C;
   padding: 0.8rem 1.2rem;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   font-weight: bold;
   font-size: 0.95rem;
   z-index: 9999;
@@ -415,4 +416,50 @@ footer {
 
 .hidden {
   display: none;
+}
+
+.carousel-portrait {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.carousel-portrait-container {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-portrait-container img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Botões abaixo do carrossel */
+.carousel-portrait-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.carousel-portrait-buttons button {
+  padding: 8px 16px;
+  font-size: 24px;
+  background-color: var(--verde-escuro);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-portrait-buttons button:hover {
+  background-color: var(--dourado);
+  color: var(--verde-escuro);
 }
